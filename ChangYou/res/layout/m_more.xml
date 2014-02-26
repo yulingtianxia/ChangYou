@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout 
+	xmlns:android="http://schemas.android.com/apk/res/android"	
+    android:id="@+id/rl"											
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bgColor"
+    android:layout_alignParentTop="true"
+	android:layout_centerHorizontal="true"
+	
+    > 
+    
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/more_bg"
+    >
+    <!--android:background="@drawable/city_bg"-->
+    <RelativeLayout
+        android:id="@+id/offersBannerLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" >
+    </RelativeLayout>
+    <GridView 
+    android:id="@+id/gridview"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:horizontalSpacing="7dip"
+    android:verticalSpacing="-2dp"
+    android:columnWidth="70dip"
+    android:numColumns="3"
+    android:stretchMode="columnWidth"
+    android:gravity="center"
+    android:background="#50CFCFCF"
+    />
+   
+ 
+</LinearLayout>
+</RelativeLayout>

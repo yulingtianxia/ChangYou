@@ -1,0 +1,110 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  Internal Error (javaClasses.cpp:129), pid=5460, tid=5672
+#  fatal error: Invalid layout of preloaded class
+#
+# JRE version: 7.0_13-b20
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (23.7-b01 mixed mode windows-amd64 compressed oops)
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.sun.com/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0000000001dbd800):  JavaThread "Unknown thread" [_thread_in_vm, id=5672, stack(0x0000000002470000,0x0000000002570000)]
+
+Stack: [0x0000000002470000,0x0000000002570000]
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+
+Other Threads:
+
+=>0x0000000001dbd800 (exited) JavaThread "Unknown thread" [_thread_in_vm, id=5672, stack(0x0000000002470000,0x0000000002570000)]
+
+VM state:not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+Events (10 events):
+Event: 0.036 loading class 0x000000000212fe20 done
+Event: 0.037 loading class 0x00000000020f4030 done
+Event: 0.037 loading class 0x00000000020f4000
+Event: 0.037 loading class 0x000000000213ab90
+Event: 0.037 loading class 0x000000000213ab90 done
+Event: 0.037 loading class 0x000000000213abd0
+Event: 0.037 loading class 0x000000000213abd0 done
+Event: 0.037 loading class 0x000000000831ca30
+Event: 0.037 loading class 0x000000000831ca30 done
+Event: 0.037 loading class 0x00000000020f4000 done
+
+
+Dynamic libraries:
+0x000000013f630000 - 0x000000013f663000 	D:\Program Files\Java\jdk1.7.0_13\bin\javaw.exe
+0x0000000076d80000 - 0x0000000076f29000 	C:\windows\SYSTEM32\ntdll.dll
+0x0000000076950000 - 0x0000000076a6f000 	C:\windows\system32\kernel32.dll
+0x000007fefd540000 - 0x000007fefd5ac000 	C:\windows\system32\KERNELBASE.dll
+0x000007fefd5e0000 - 0x000007fefd6bb000 	C:\windows\system32\ADVAPI32.dll
+0x000007fefe560000 - 0x000007fefe5ff000 	C:\windows\system32\msvcrt.dll
+0x000007fefe9a0000 - 0x000007fefe9bf000 	C:\windows\SYSTEM32\sechost.dll
+0x000007fefe6f0000 - 0x000007fefe81d000 	C:\windows\system32\RPCRT4.dll
+0x0000000076c80000 - 0x0000000076d7a000 	C:\windows\system32\USER32.dll
+0x000007fefe4f0000 - 0x000007fefe557000 	C:\windows\system32\GDI32.dll
+0x000007feff080000 - 0x000007feff08e000 	C:\windows\system32\LPK.dll
+0x000007fefe620000 - 0x000007fefe6e9000 	C:\windows\system32\USP10.dll
+0x000007fefb7d0000 - 0x000007fefb9c4000 	C:\windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.7601.17514_none_fa396087175ac9ac\COMCTL32.dll
+0x000007fefe9c0000 - 0x000007fefea31000 	C:\windows\system32\SHLWAPI.dll
+0x000007fefd5b0000 - 0x000007fefd5de000 	C:\windows\system32\IMM32.DLL
+0x000007fefeca0000 - 0x000007fefeda9000 	C:\windows\system32\MSCTF.dll
+0x000000006f090000 - 0x000000006f161000 	D:\Program Files\Java\jdk1.7.0_13\jre\bin\msvcr100.dll
+0x0000000069160000 - 0x000000006987f000 	D:\Program Files\Java\jdk1.7.0_13\jre\bin\server\jvm.dll
+0x000007fef3920000 - 0x000007fef3929000 	C:\windows\system32\WSOCK32.dll
+0x000007fefea40000 - 0x000007fefea8d000 	C:\windows\system32\WS2_32.dll
+0x000007fefedb0000 - 0x000007fefedb8000 	C:\windows\system32\NSI.dll
+0x000007fefb0d0000 - 0x000007fefb10b000 	C:\windows\system32\WINMM.dll
+0x0000000076f50000 - 0x0000000076f57000 	C:\windows\system32\PSAPI.DLL
+0x0000000073880000 - 0x000000007388f000 	D:\Program Files\Java\jdk1.7.0_13\jre\bin\verify.dll
+0x000000006ffb0000 - 0x000000006ffd8000 	D:\Program Files\Java\jdk1.7.0_13\jre\bin\java.dll
+0x000000006ff90000 - 0x000000006ffa5000 	D:\Program Files\Java\jdk1.7.0_13\jre\bin\zip.dll
+
+VM Arguments:
+jvm_args: -Dfile.encoding=UTF-8 -Xbootclasspath:D:\adt-bundle-windows-x86_64-20130219\sdk\platforms\android-8\android.jar 
+java_command: org.eclipse.jdt.internal.junit.runner.RemoteTestRunner -version 3 -port 2032 -testLoaderClass org.eclipse.jdt.internal.junit4.runner.JUnit4TestLoader -loaderpluginname org.eclipse.jdt.junit4.runtime -classNames com.hit.changyou.POIBeanTest
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=D:\Program Files\Java\jdk1.7.0_13
+CLASSPATH=.;D:\Program Files\Java\jdk1.7.0_13\lib\dt.jar;D:\Program Files\Java\jdk1.7.0_13\lib\tools.jar;
+PATH=D:/Program Files/Java/jdk1.7.0_13/bin/../jre/bin/server;D:/Program Files/Java/jdk1.7.0_13/bin/../jre/bin;D:/Program Files/Java/jdk1.7.0_13/bin/../jre/lib/amd64;D:\Python27;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;D:\Program Files\Java\jdk1.7.0_13\bin;D:\Program Files\Java\jdk1.7.0_13\jre\bin;C:\Program Files\Common Files\Microsoft Shared\Windows Live;C:\Program Files (x86)\Common Files\Microsoft Shared\Windows Live;C:\Program Files (x86)\AMD APP\bin\x86_64;C:\Program Files (x86)\AMD APP\bin\x86;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\ATI Technologies\ATI.ACE\Core-Static;C:\Program Files\Broadcom\Broadcom 802.11 Network Adapter\Driver;C:\Program Files (x86)\Windows Live\Shared;C:\Program Files\Microsoft\Web Platform Installer\;C:\Program Files (x86)\Microsoft ASP.NET\ASP.NET Web Pages\v1.0\;C:\Program Files (x86)\Windows Kits\8.0\Windows Performance Toolkit\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\100\Tools\Binn\VSShell\Common7\IDE\;C:\Program Files (x86)\Microsoft SQL Server\100\Tools\Binn\;C:\Program Files\Microsoft SQL Server\100\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\100\DTS\Binn\;C:\Program Files (x86)\MySQL\MySQL Server 5.1\bin;D:\Program Files (x86)\Cracklock\Bin;D:\adt-bundle-windows-x86_64-20130219\eclipse;
+USERNAME=—ÓœÙ”Ò
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=AMD64 Family 18 Model 1 Stepping 0, AuthenticAMD
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 7 , 64 bit Build 7601 Service Pack 1
+
+CPU:total 4 (4 cores per cpu, 1 threads per core) family 18 model 1 stepping 0, cmov, cx8, fxsr, mmx, sse, sse2, sse3, popcnt, mmxext, 3dnowpref, lzcnt, sse4a, tsc, tscinvbit, tscinv
+
+Memory: 4k page, physical 3649264k(1700452k free), swap 7296672k(4174668k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (23.7-b01) for windows-amd64 JRE (1.7.0_13-b20), built on Jan 30 2013 10:10:00 by "java_re" with unknown MS VC++:1600
+
+time: Fri Jul 05 10:47:16 2013
+elapsed time: 0 seconds
+

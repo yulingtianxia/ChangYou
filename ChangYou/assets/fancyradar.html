@@ -1,0 +1,180 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+    <head>
+        <meta name="viewport" content="target-densitydpi=device-dpi, width = 540, user-scalable = 0" />
+        <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+            <title>Simple Radar</title>
+            
+            <style type="text/css">
+            .info {
+                color: #9F6000;
+                background-color: #FEEFB3;
+                margin: -8px 1%;
+                padding: 10px;
+                font-size: 14pt;
+                border-radius: 0 0 10px 10px;
+                text-align: center;
+            }
+            </style>
+
+            <!-- Include the ARchitect library -->
+            <script src="architect://architect.js"></script>
+            <script src="ade.js"></script>
+            
+            <script>
+                var isSimpleRadar = false;
+                var simpleRadarImg = new AR.ImageResource("radarImg.png");
+                var fancyRadarImg = new AR.ImageResource("fancyradar.png");
+                var simpleNI = new AR.ImageResource("north_arrow.png");
+                var fancyNI = new AR.ImageResource("fancy_north.png");
+
+                var marker1 = new AR.ImageResource("marker1.png");
+                var marker2 = new AR.ImageResource("marker2.png");
+                var markerDrawable = new AR.ImageDrawable(marker2, 1.0);
+                var markerDrawableHighlight = new AR.ImageDrawable(marker1, 1.0);
+                var radarCircle = new AR.Circle(0.05, {style: {fillColor: '#83ff7b'}});
+                var radarCircleHighlight = new AR.Circle(0.05, {style: {fillColor: '#ffbd0a'}});
+
+                var lastGeoObj = null;
+
+                markerDrawable.onClick = function(arObject){
+                    if(lastGeoObj != null){
+                        lastGeoObj.drawables.cam = markerDrawable;
+                        lastGeoObj.drawables.radar = radarCircle;
+                        lastGeoObj.renderingOrder = 0;
+                    }
+                    arObject.drawables.cam = markerDrawableHighlight;
+                    arObject.drawables.radar = radarCircleHighlight;
+                    arObject.renderingOrder = 1;
+                    lastGeoObj = arObject;
+                };
+
+                // SimpleRadar-Class
+                var SimpleRadar = {};
+                // this function will be called when the fist location-update arrives
+                AR.context.onLocationChanged = locationChanged;
+                function locationChanged(lat, lon, alt, acc)
+                {
+                    if (SimpleRadar.currentLoc == null) {
+                        // since we only use the first location only and no further location-update is needed,
+                        // the onLocationChanged trigger is set to null:
+                        AR.context.onLocationChanged = null;
+                        SimpleRadar.currentLoc = {
+                            lat : lat,
+                            lon : lon,
+                            alt : alt
+                        };
+                        SimpleRadar.createRadar();
+                        SimpleRadar.createGeoObjects();
+                    }
+                }
+                
+                // all the properties for the radar are set and the radar will be enabled
+                SimpleRadar.createRadar = function()
+                {
+                    AR.radar.enabled = false;
+                    if(!isSimpleRadar){
+                        // set the backgoround image for the radar
+                        AR.radar.background = fancyRadarImg;
+                        
+                        // set the position of the radar (defined as the position of the top-left-corner of the radar-background image):
+                        // set the positionX to 10% of the screen width 
+                        AR.radar.positionX = 0.1;
+                        // set the positionY to 10% of the screen height
+                        AR.radar.positionY = 0.1;
+                        
+                        // set the width of the radar to 40% of the screen-width
+                        AR.radar.width     = 0.4;
+                        
+                        // set the center of the radar - Specifies the position of the center of the actual radar area
+                        // -> in our case we need to set it to the middle of the radar
+                        // set centerX/centerY to 50% of the radar width
+                        AR.radar.centerX   = 0.5;
+                        AR.radar.centerY   = 0.64142538975501;
+                        
+                        // set the radar-radius, which scales the radius of the actual radar area to 40% of the entire width of the radar background image.
+                        AR.radar.radius    = 0.3;
+                        
+                        // set the north-indicator image for the radar (not necessary if you don't want to display a north-indicator)
+                        AR.radar.northIndicator.image = fancyNI;
+                        
+                        // set the northIndicator-radius, which scales the radius of the actual radar area to 40% of the entire width of the radar background image.
+                        AR.radar.northIndicator.radius = 0.0;
+                        
+                        // set the onClick-trigger for the radar. (not necessary if you don't want to display a north-indicator)
+                        // In case the radar is being clicked pop-up an alert to show that the click-trigger fired
+                        AR.radar.onClick = function(){
+                            isSimpleRadar = true; 
+                            SimpleRadar.createRadar();
+                            document.getElementById('message').innerHTML = 'click on radar for a fancy radar-view'; 
+                        };
+                    }else{
+                        // set the backgoround image for the radar
+                        AR.radar.background = simpleRadarImg;
+                        
+                        // set the position of the radar (defined as the position of the top-left-corner of the radar-background image):
+                        // set the positionX to 10% of the screen width 
+                        AR.radar.positionX = 0.1;
+                        // set the positionY to 10% of the screen height
+                        AR.radar.positionY = 0.1;
+                        
+                        // set the width of the radar to 40% of the screen-width
+                        AR.radar.width     = 0.4;
+                        
+                        // set the center of the radar - Specifies the position of the center of the actual radar area
+                        // -> in our case we need to set it to the middle of the radar
+                        // set centerX/centerY to 50% of the radar width
+                        AR.radar.centerX   = 0.5;
+                        AR.radar.centerY   = 0.5;
+                        
+                        // set the radar-radius, which scales the radius of the actual radar area to 40% of the entire width of the radar background image.
+                        AR.radar.radius    = 0.4;
+                        
+                        // set the north-indicator image for the radar (not necessary if you don't want to display a north-indicator)
+                        AR.radar.northIndicator.image = simpleNI;
+                        
+                        // set the northIndicator-radius, which scales the radius of the actual radar area to 40% of the entire width of the radar background image.
+                        AR.radar.northIndicator.radius = 0.4;
+                        
+                        // set the onClick-trigger for the radar. (not necessary if you don't want to display a north-indicator)
+                        // In case the radar is being clicked pop-up an alert to show that the click-trigger fired
+                        AR.radar.onClick = function(){ 
+                            isSimpleRadar = false; 
+                            SimpleRadar.createRadar(); 
+                            document.getElementById('message').innerHTML = 'click on radar for a simple radar-view';
+                        };
+                    }
+                    // enable the radar to display it on the device
+                    AR.radar.enabled   = true;
+                }
+                
+                // create a certain number of geo-objects to a random location
+                SimpleRadar.createGeoObjects = function()
+                {
+                    var currentLat = SimpleRadar.currentLoc.lat;
+                    var currentLng = SimpleRadar.currentLoc.lon;
+                    var geoLocationCurrent = new AR.GeoLocation(currentLat, currentLng);
+                    var NUM_MARKERS = 10;
+
+                    for(var i=0; i<NUM_MARKERS; i++){
+                        var geoLocation = new AR.GeoLocation(currentLat + ((SimpleRadar.getRandom(100, 1000) - 550) / 100000), currentLng + ((SimpleRadar.getRandom(100, 1000) - 550) / 100000));
+
+                        var geoObject = new AR.GeoObject(geoLocation, {drawables: {cam: markerDrawable, radar: radarCircle}});
+                    }
+                } 
+                
+                // creates a random number between the given minimum and maximum value 
+                SimpleRadar.getRandom = function(min, max) {
+                    if(min == max) {
+                        return min;
+                    }
+                    return min + Math.random() * (max-min);
+                }
+                
+                </script>
+    </head>
+    
+    <body>
+        <div id="message" class="info">click on radar for a simple radar-view</div>
+    </body>
+</html>

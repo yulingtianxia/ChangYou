@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="TextColor">#FFFFFF</color>
+    <color name="bgColor">#000000</color>
+    <color name="Sites_distanct_TextColor">#808080</color>
+    <color name="ListTextColor">#000000</color>
+    <color name="listbgColor1">#ffffff</color>
+    <color name="listbgColor2">#f3f3f3</color>
+    <color name="listmenufont">#c1c8cd</color>
+</resources>

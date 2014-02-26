@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout 
+	xmlns:android="http://schemas.android.com/apk/res/android"	
+	xmlns:test="http://schemas.android.com/apk/res/com.wikitude.architect"
+    android:id="@+id/rl"											
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/bgColor"
+    android:layout_alignParentBottom="true"
+	android:layout_centerHorizontal="true"
+    > 
+    <LinearLayout 
+        android:id="@+id/linearLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+		<com.wikitude.architect.ArchitectView
+		    android:keepScreenOn="true"
+		    android:id="@+id/architectview"
+		    android:layout_width="fill_parent"
+		    android:layout_height="fill_parent"
+		    ></com.wikitude.architect.ArchitectView>
+    </LinearLayout>
+</RelativeLayout>

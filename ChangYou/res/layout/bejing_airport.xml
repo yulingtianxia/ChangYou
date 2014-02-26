@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="#FFFFFF"
+    >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="40dip"
+        android:background="@drawable/title"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:id="@+id/back_port"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/backbutton" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_marginBottom="0dip"
+            android:layout_marginLeft="10dip"
+            android:layout_marginTop="0dip"
+            android:layout_weight="0.55"
+            android:gravity="center"
+            android:text="北京飞机场T1"
+            android:textColor="#FFFFFF"
+            android:textSize="20dip"
+            android:textStyle="bold" >
+        </TextView>
+
+        <ImageView
+            android:id="@+id/ImageView01"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:src="@drawable/navibtn" />
+
+    </LinearLayout>
+
+     <LinearLayout
+    android:orientation="vertical"
+    android:id="@+id/LinearLayout_airport1"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/airpoort_nav"
+    >
+   
+    </LinearLayout>
+
+</LinearLayout>

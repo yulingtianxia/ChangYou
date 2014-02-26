@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="action_settings">Settings</string>
+    <string name="app_name">畅游-室内导航专家</string>
+    <string name="main_search">畅搜</string>
+    <string name="main_map">游道</string>
+    <string name="main_camera">摄游</string>
+    <string name="main_info">资讯</string>
+    <string name="main_more">更多</string>
+	<string name="auth_string">请登录</string>
+    <string name="auth_success">登陆成功</string>
+    <string name="auth_failed">登陆失败</string>
+    
+    <string name="city1">北京</string>
+    <string name="city2">天津</string>
+    <string name="city3">哈尔滨</string>
+    <string name="city4">上海</string>
+    <string name="city5">杭州</string>
+    <string name="city6">南昌</string>
+    <string name="city7">福州</string>
+    <string name="city8">广州</string>
+    <string name="city9">重庆</string>
+    <string name="city10">长春</string>
+    <string name="city11">济南</string>
+    <string name="city12">石家庄</string>
+    <string name="city13">武汉</string>
+    <string name="city14">厦门</string>
+    <string name="city15">青岛</string>
+    <string name="city16">沈阳</string>
+    <string name="city17">呼和浩特</string>
+    <string name="city18">桂林</string>
+    <string name="city19">兰州</string>
+    <string name="city20">大连</string>
+    <string name="city21">合肥</string>
+    <string name="city22">拉萨 </string>
+    
+    
+    <string name="site_kind1">餐厅</string>
+    <string name="site_kind2">医院</string>
+    <string name="site_kind3">飞机场</string>
+    <string name="site_kind4">火车站</string>
+    <string name="site_kind5">大学</string>
+    
+    
+    <string name="more_inf_title1">个人信息</string>
+    <string name="more_inf_title2">我的收藏</string>
+    <string name="more_inf_title3">设置</string>
+    <string name="more_inf_title4">主题皮肤</string>
+    <string name="more_inf_title5">登陆</string>
+    <string name="more_inf_title6">自动分享</string>
+    <string name="more_inf_title7">畅游推荐</string>
+    <string name="more_inf_title8">VIP特权</string>
+    <string name="more_inf_title9">使用教程</string>
+</resources>

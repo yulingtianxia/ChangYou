@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/answerbg"
+    android:orientation="vertical" 
+    android:id="@+id/rlayout">
+
+    <ImageView
+        android:id="@+id/rhead"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"/>
+    <ImageView 
+        android:id="@+id/personalback"
+        android:src="@drawable/backbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="0dp"
+        />
+    <TextView
+        android:id="@+id/rname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="170dp"
+        android:textSize="18dip"
+        android:text="请登录"
+        android:textColor="#000000" />
+
+    <TextView
+        android:id="@+id/rsex"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="220dp"
+        android:textSize="18dip"
+        android:text="性别未知"
+        android:textColor="#000000" />
+
+    <TextView
+        android:id="@+id/rage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="270dp"
+        android:textSize="18dip"
+        android:text="年龄还是个秘密"
+        android:textColor="#000000" />
+
+    <TextView
+        android:id="@+id/rschool"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="320dp"
+        android:textSize="18dip"
+        android:text="学校: "
+        android:textColor="#000000" />
+
+    <TextView
+        android:id="@+id/score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18dip"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="370dp"
+        android:text="未登录无法查看畅游币余额"
+        android:textColor="#000000"
+         />
+    <!--  
+    <ImageView 
+        android:id="@+id/imagerenrenout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="90dp"
+        android:layout_marginTop="435dp"
+        android:src="@drawable/btn_logout_normal"
+        />
+      -->
+
+      <Button
+          android:id="@+id/logoutBtn"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_below="@+id/score"
+          android:layout_centerHorizontal="true"
+          android:layout_marginTop="16dp"
+          android:background="@drawable/btn_logout1" />
+
+      <Button
+          android:id="@+id/button1"
+          android:layout_width="1dp"
+          android:layout_height="1dp"
+          android:layout_alignParentLeft="true"
+          android:layout_alignTop="@+id/rname"
+          android:textAppearance="@null" />
+	<RelativeLayout
+        android:id="@+id/adLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center_horizontal" >
+    </RelativeLayout>
+</RelativeLayout>

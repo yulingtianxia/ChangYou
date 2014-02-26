@@ -1,0 +1,381 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0061)http://www.wikitude.com/doc/architect_tutorial/tutorial5.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>My ARchitect World</title>
+    
+    <!-- CSS Styles -->
+    <style type="text/css">
+        
+        * {
+            margin: 0;
+        }
+        html, body {
+            height: 100%;
+        }
+        
+        #footer{
+            height: 4em;
+            background-color: rgba(255,255,255,0.5);
+            padding: 5px 10px;
+            display:none;
+            position:absolute;
+            bottom: 10px;
+            left: 0px;
+            right:0px;
+            moz-border-radius: 10px;
+            -webkit-border-radius: 10px;
+            -khtml-border-radius: 10px;
+            border-radius: 10px;
+            
+        }
+        
+        /* CSS Style for status message at the top of the HUD */
+        .status {
+            border-radius: 2em;
+            border: solid 2px #6d6d6d;
+            background-color: rgba(256, 193, 0, 0.7);
+            color: black;
+            text-align: center;
+            font-weight: bold;
+            
+            position:absolute;
+            width: 90%;
+            height: 5%;
+            left: 5%;
+            top: 1%;
+        }
+        }	
+        </style>
+    
+    <!-- Include the ARchitect library -->
+    <script src="architect://architect.js"></script>
+    <!-- Include the ARchitect Desktop Engine for testing on a desktop browser-->
+    <script src="ade.js"></script>
+    
+</head>
+    
+    <body>
+        <script>
+            // Tutorial code using the ARchitect Javascript library
+            
+            // Create new images, which will be loaded right away
+            // firstImage = new AR.ImageResource("marker1.png", {onError: errorLoadingImage});
+            // secondImage = new AR.ImageResource("marker2.png", {onError: errorLoadingImage});
+            // thirdImage = new AR.ImageResource("marker3.png", {onError: errorLoadingImage});
+            // var isSimpleRadar = false;
+            // var simpleRadarImg = new AR.ImageResource("radarImg.png");
+            // var fancyRadarImg = new AR.ImageResource("fancyradar.png");
+            // var simpleNI = new AR.ImageResource("north_arrow.png");
+            // var fancyNI = new AR.ImageResource("fancy_north.png");
+            // var radarCircle = new AR.Circle(0.05, {style: {fillColor: '#83ff7b'}});
+            // var radarCircleHighlight = new AR.Circle(0.05, {style: {fillColor: '#ffbd0a'}});
+                            // SimpleRadar-Class
+                // var SimpleRadar = {};
+                // this function will be called when the fist location-update arrives
+                AR.context.onLocationChanged = locationChanged;
+                function locationChanged(lat, lon, alt, acc)
+                {
+                    // if (SimpleRadar.currentLoc == null) {
+                    //     // since we only use the first location only and no further location-update is needed,
+                    //     // the onLocationChanged trigger is set to null:
+                    //     AR.context.onLocationChanged = null;
+                    //     SimpleRadar.currentLoc = {
+                    //         lat : lat,
+                    //         lon : lon,
+                    //         alt : alt
+                    //     };
+                    //     SimpleRadar.createRadar();
+                    //     SimpleRadar.createGeoObjects();
+                    // }
+                }
+                
+                // all the properties for the radar are set and the radar will be enabled
+                // SimpleRadar.createRadar = function()
+                // {
+                //     AR.radar.enabled = false;
+                //     if(!isSimpleRadar){
+                //         // set the backgoround image for the radar
+                //         AR.radar.background = fancyRadarImg;
+                        
+                //         // set the position of the radar (defined as the position of the top-left-corner of the radar-background image):
+                //         // set the positionX to 10% of the screen width 
+                //         AR.radar.positionX = 0.1;
+                //         // set the positionY to 10% of the screen height
+                //         AR.radar.positionY = 0.1;
+                        
+                //         // set the width of the radar to 40% of the screen-width
+                //         AR.radar.width     = 0.4;
+                        
+                //         // set the center of the radar - Specifies the position of the center of the actual radar area
+                //         // -> in our case we need to set it to the middle of the radar
+                //         // set centerX/centerY to 50% of the radar width
+                //         AR.radar.centerX   = 0.5;
+                //         AR.radar.centerY   = 0.64142538975501;
+                        
+                //         // set the radar-radius, which scales the radius of the actual radar area to 40% of the entire width of the radar background image.
+                //         AR.radar.radius    = 0.3;
+                        
+                //         // set the north-indicator image for the radar (not necessary if you don't want to display a north-indicator)
+                //         AR.radar.northIndicator.image = fancyNI;
+                        
+                //         // set the northIndicator-radius, which scales the radius of the actual radar area to 40% of the entire width of the radar background image.
+                //         AR.radar.northIndicator.radius = 0.0;
+                        
+                //         // set the onClick-trigger for the radar. (not necessary if you don't want to display a north-indicator)
+                //         // In case the radar is being clicked pop-up an alert to show that the click-trigger fired
+                //         AR.radar.onClick = function(){
+                //             isSimpleRadar = true; 
+                //             SimpleRadar.createRadar();
+                //             document.getElementById('message').innerHTML = 'click on radar for a fancy radar-view'; 
+                //         };
+                //     }else{
+                //         // set the backgoround image for the radar
+                //         AR.radar.background = simpleRadarImg;
+                        
+                //         // set the position of the radar (defined as the position of the top-left-corner of the radar-background image):
+                //         // set the positionX to 10% of the screen width 
+                //         AR.radar.positionX = 0.1;
+                //         // set the positionY to 10% of the screen height
+                //         AR.radar.positionY = 0.1;
+                        
+                //         // set the width of the radar to 40% of the screen-width
+                //         AR.radar.width     = 0.4;
+                        
+                //         // set the center of the radar - Specifies the position of the center of the actual radar area
+                //         // -> in our case we need to set it to the middle of the radar
+                //         // set centerX/centerY to 50% of the radar width
+                //         AR.radar.centerX   = 0.5;
+                //         AR.radar.centerY   = 0.5;
+                        
+                //         // set the radar-radius, which scales the radius of the actual radar area to 40% of the entire width of the radar background image.
+                //         AR.radar.radius    = 0.4;
+                        
+                //         // set the north-indicator image for the radar (not necessary if you don't want to display a north-indicator)
+                //         AR.radar.northIndicator.image = simpleNI;
+                        
+                //         // set the northIndicator-radius, which scales the radius of the actual radar area to 40% of the entire width of the radar background image.
+                //         AR.radar.northIndicator.radius = 0.4;
+                        
+                //         // set the onClick-trigger for the radar. (not necessary if you don't want to display a north-indicator)
+                //         // In case the radar is being clicked pop-up an alert to show that the click-trigger fired
+                //         AR.radar.onClick = function(){ 
+                //             isSimpleRadar = false; 
+                //             SimpleRadar.createRadar(); 
+                //             document.getElementById('message').innerHTML = 'click on radar for a simple radar-view';
+                //         };
+                //     }
+                //     // enable the radar to display it on the device
+                //     AR.radar.enabled   = true;
+                // }
+                
+                // create a certain number of geo-objects to a random location
+                // SimpleRadar.createGeoObjects = function()
+                // {
+                //     for(var i = 0; i < jsonObject.length; i++)
+                //     {
+                //         var poidrawables = new Array();
+                //         var label = new AR.Label(jsonObject[i].name,1.0, {offsetY : -1.5,
+                //                                  triggers: { 
+                //                                  onClick:
+                //                                  createClickTrigger(jsonObject[i].id)},
+                //                                  style : {textColor : '#FFC100',backgroundColor : '#FFFFFF80'}});
+                        
+                //         jsonObject[i].arLabel = label;
+                        
+                //         var poiImage;
+                //         var m = jsonObject[i].type%9;
+                //         poiImage = markerImg[m];
+                        
+                        
+                //         var img = new AR.ImageDrawable(poiImage, 2.0,
+                //                                        {triggers: { 
+                //                                        onClick:
+                //                                        createClickTrigger(jsonObject[i].id)}}
+                //                                        );
+                //         jsonObject[i].animation = createOnClickAnimation(img);
+                //         // jsonObject[i].animation = createOnClickAnimation(Circle);
+                //         jsonObject[i].img = img;
+                //         // jsonObject[i].img = Circle;
+                //         poidrawables.push(label);
+                //         poidrawables.push(img);
+                //         // poidrawables.push(Circle);
+                //         geoLoc = new AR.GeoLocation(jsonObject[i].Point.latitude,jsonObject[i].Point.longitude,jsonObject[i].Point.altitude);
+                //         jsonObject[i].poiObj = new AR.GeoObject(geoLoc, {drawables: {cam: poidrawables,radar: radarCircle}});
+
+                //     }
+                // } 
+            
+            
+            
+            // current selected object
+            var selectedObject = null;
+            
+            
+            //variable that keeps the jsonData received from the native app
+            var jsonObject;
+            
+            
+            //function that gets called when the displayed poi bubble is clicked
+            //sends the id of the selected poi to the native app
+            function generateOnPoiBubbleClickFunc(id)
+            {
+                return function()
+                {
+                    document.location = "architectsdk://opendetailpage?id="+id;  		
+                }
+            }
+            
+            
+            // creates a property animation
+            function createOnClickAnimation(imageDrawable)
+            {
+                var anim = new AR.PropertyAnimation( imageDrawable, 'scaling', 1.0, 1.2, 750, new AR.EasingCurve(AR.CONST.EASING_CURVE_TYPE.EASE_OUT_ELASTIC, {amplitude : 2.0}) );
+                return anim;
+            }
+            
+            
+            // creates a function for assigning to label's and imageDrawable's onClickTrigger
+            function createClickTrigger(id) 
+            {
+                return function() 
+                {
+                    // hide the bubble
+                    document.getElementById("footer").style.display = 'block';
+                    document.getElementById("poiName").innerHTML=jsonObject[id].name;
+                    document.getElementById("poiDesc").innerHTML=jsonObject[id].description.substring(0,25);
+                    document.getElementById("footer").onclick= generateOnPoiBubbleClickFunc(id);
+                    
+                    // reset the previous selected poi
+                    if(selectedObject != null)
+                    {
+                        // reset the property animation
+                        selectedObject.animation.stop();
+                        
+                        selectedObject.arLabel.style.backgroundColor = '#FFFFFF80';
+                        selectedObject.img.scaling = 1.0;
+                        selectedObject.poiObj.renderingOrder = 0;
+                    }
+                    
+                    // set a new select status for the current selected poi
+                    selectedObject = jsonObject[id];
+                    selectedObject.arLabel.style.backgroundColor = '#FFFFFFFF';
+                    selectedObject.poiObj.renderingOrder = 1;
+                    
+                    // start the assigned animation
+                    selectedObject.animation.start();
+                    
+                    return true;
+                }
+            }
+            
+            //function called from the native app fia callJavascript method
+            //receives json-data as string and processes the contained information
+            function newData(jsonData){
+                jsonObject = JSON.parse(jsonData);
+                
+                
+                // var radarCircle = new AR.Circle(0.05, {style: {fillColor: '#83ff7b'}});
+                var markerImg = new Array();
+                for (var i = 0;i<9;i++){
+                    markerImg.push(new AR.ImageResource(i+".png", {onError: errorLoadingImage}));
+                };
+                
+                
+                for(var i = 0; i < jsonObject.length; i++)
+                {
+                    var poidrawables = new Array();
+                    var label = new AR.Label(jsonObject[i].name,1.0, {offsetY : -1.5,
+                                             triggers: { 
+                                             onClick:
+                                             createClickTrigger(jsonObject[i].id)},
+                                             style : {textColor : '#FFC100',backgroundColor : '#FFFFFF80'}});
+                    
+                    jsonObject[i].arLabel = label;
+                    
+                    var poiImage;
+                    // if(jsonObject[i].type == 1) 
+                    // {
+                    //     poiImage = firstImage;
+                    // }
+                    // else if(jsonObject[i].type == 2)
+                    // {
+                    //     poiImage = secondImage;
+                    // }
+                    // else
+                    // {
+                    //     poiImage = thirdImage;
+                    // }
+                    
+                    // document.getElementById("statusElement").innerHTML+=jsonObject[i].type%9+'\n';
+                    // poiImage = markerImg[jsonObject[i].type%9];
+                    var m = jsonObject[i].type%9;
+                    poiImage = markerImg[m];
+                    
+                    
+                    var img = new AR.ImageDrawable(poiImage, 2.0,
+                                                   {triggers: { 
+                                                   onClick:
+                                                   createClickTrigger(jsonObject[i].id)}}
+                                                   );
+                    // var Circle = new AR.Circle(0.2, {style: {fillColor: '#83ff7b'}});
+                    jsonObject[i].animation = createOnClickAnimation(img);
+                    // jsonObject[i].animation = createOnClickAnimation(Circle);
+                    jsonObject[i].img = img;
+                    // jsonObject[i].img = Circle;
+                    poidrawables.push(label);
+                    poidrawables.push(img);
+                    // poidrawables.push(Circle);
+                    geoLoc = new AR.GeoLocation(jsonObject[i].Point.latitude,jsonObject[i].Point.longitude,jsonObject[i].Point.altitude);
+                    // jsonObject[i].poiObj = new AR.GeoObject(geoLoc, {drawables: {cam: poidrawables,radar: radarCircle}});
+
+                    jsonObject[i].poiObj = new AR.GeoObject(geoLoc, {drawables: {cam: poidrawables}});
+                    // var geoObject = new AR.GeoObject(geoLoc, {drawables: {cam: markerDrawable, radar: radarCircle}});
+                    // document.getElementById("statusElement").innerHTML+=jsonObject[i].Point.latitude+','+jsonObject[i].Point.longitude+'\r\n'; 
+                }
+                
+                document.getElementById("statusElement").innerHTML='加载完毕';	
+                
+                
+            }
+            
+            // Called if loading of the image fails.
+            function errorLoadingImage() {
+                // set error message on HUD
+                document.getElementById("statusElement").innerHTML = "Unable to load image!";
+            }
+            
+            
+            // hide bubble and reset the selected poi if nothing was hit by a display click
+            AR.context.onScreenClick = function()
+            {
+                // hide the bubble
+                document.getElementById("footer").style.display = 'none';
+                
+                // and reset the current selected poi
+                if(selectedObject != null)
+                {
+                    // reset the property animation
+                    selectedObject.animation.stop();
+                    
+                    selectedObject.arLabel.style.backgroundColor = '#FFFFFF80';
+                    selectedObject.img.scaling = 1.0;
+                    selectedObject.poiObj.renderingOrder = 0;
+                    selectedObject = null;
+                }
+            }
+            
+            </script>
+        
+        
+		<!-- Status element at the top of the HUD -->
+        <div id="statusElement" class="status">正在加载地点信息</div>
+        <br/>
+        <br/>
+        <br/>
+        <div id="footer">
+            <h3><span id="poiName"></span></h3>
+            简介: <span id="poiDesc"></span><br/>
+            <p style="text-align:center;">(点击查看详细信息...)</p>
+        </div>
+    </body></html>

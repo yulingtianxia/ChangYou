@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rl"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_alignParentTop="true"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="@dimen/main_button_top_margin"
+    android:background="@color/bgColor"
+    android:focusable="true"
+    android:focusableInTouchMode="true" >
+
+<LinearLayout
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/loading"
+    android:focusable="true"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/searchbg"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/btn_sitekind_search"
+            android:layout_width="60dp"
+            android:layout_height="fill_parent"
+            android:background="#5eFFFFFF"
+            android:text="类型"
+            android:textColor="@color/TextColor" >
+
+        </Button>
+        <!-- 搜索框 -->
+
+        <EditText
+            android:id="@+id/suggestionkey"
+            android:layout_width="200dp"
+            android:layout_height="32dp"
+            android:layout_marginLeft="45dp"
+            android:layout_marginTop="5dp"
+            android:background="@null"
+            android:hint="Search..."
+            android:inputType="textVisiblePassword" >
+
+            <requestFocus />
+
+        </EditText>
+    </LinearLayout>
+  <ListView 
+		android:id="@+id/ListView01"       
+      	android:layout_width="fill_parent" 
+      	android:layout_height="wrap_content"
+      	android:choiceMode="singleChoice"
+      	android:divider="@drawable/list_line_shape"  
+     	android:dividerHeight="1sp"
+     	>  
+	</ListView>
+</LinearLayout>
+</RelativeLayout>

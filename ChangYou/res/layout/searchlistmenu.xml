@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/lin_main"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingRight="140dip" >
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" 
+        android:background="#d9e1e7">
+ <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/listmenu_button_bg" >
+        <Button
+            android:id="@+id/btn_site_kind1"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="5dp"
+            android:background="#00d9e1e7"
+            android:text="@string/site_kind1"
+            android:textColor="@color/listmenufont"
+            android:textSize="@dimen/type_button_font_size" />
+        </LinearLayout>
+      <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/listmenu_button_bg" >
+        <Button
+            android:id="@+id/btn_site_kind2"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="5dp"
+            android:background="#00d9e1e7"
+            android:text="@string/site_kind2"
+            android:textColor="@color/listmenufont"
+            android:textSize="@dimen/type_button_font_size" />
+        </LinearLayout>
+      <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/listmenu_button_bg" >
+        <Button
+            android:id="@+id/btn_site_kind3"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="5dp"
+            android:background="#00d9e1e7"
+            android:text="@string/site_kind3"
+            android:textColor="@color/listmenufont"
+            android:textSize="@dimen/type_button_font_size" />
+        </LinearLayout>
+
+        <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/listmenu_button_bg" >
+        <Button
+            android:id="@+id/btn_site_kind4"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="5dp"
+            android:background="#00d9e1e7"
+            android:text="@string/site_kind4"
+            android:textColor="@color/listmenufont"
+            android:textSize="@dimen/type_button_font_size" />
+        </LinearLayout>
+     <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/listmenu_button_bg" >
+        <Button
+            android:id="@+id/btn_site_kind5"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="5dp"
+            android:background="#00d9e1e7"
+            android:text="@string/site_kind5"
+            android:textColor="@color/listmenufont"
+            android:textSize="@dimen/type_button_font_size" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
