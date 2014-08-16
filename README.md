@@ -1,4 +1,4 @@
-ChangYou
+ChangYou [![Build Status](https://travis-ci.org/yulingtianxia/ChangYou.svg?branch=master)](https://travis-ci.org/yulingtianxia/ChangYou)
 ========
 
 畅游室内导航
